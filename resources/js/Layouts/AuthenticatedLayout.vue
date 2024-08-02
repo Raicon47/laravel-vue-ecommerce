@@ -7,7 +7,7 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-   
+
    <div class="bg-warning">
     <ul class="nav">
   <li class="nav-item">
@@ -29,7 +29,7 @@ const showingNavigationDropdown = ref(false);
 
     <div>
         <div class="container col-md-8 mx-auto my-5">
-           
+
 
             <!-- Page Heading -->
             <header class="" v-if="$slots.header">

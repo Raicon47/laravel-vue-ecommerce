@@ -34,6 +34,8 @@ class User extends Authenticatable implements Wallet
         'remember_token',
     ];
 
+    protected $with = ['wallet'];
+
     /**
      * Get the attributes that should be cast.
      *

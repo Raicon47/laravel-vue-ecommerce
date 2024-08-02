@@ -20,7 +20,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('deposit'));
+    form.post(route('withdraw'));
 };
 </script>
 
@@ -29,7 +29,7 @@ const submit = () => {
     <Head title="Deposit" />
 
     <div class="container col-md-4 mx-auto">
-        <h1>Deposit</h1>
+        <h1>Withdraw</h1>
         <p>Hello , {{ $page.props.auth.user.name }}. input deposit amount below</p>
 
         <form @submit.prevent="submit">
@@ -49,7 +49,7 @@ const submit = () => {
             </div>
 
             <PrimaryButton class="btn btn-success" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    deposit
+                    withdraw
             </PrimaryButton>
 
         </form>
@@ -64,6 +64,7 @@ const submit = () => {
         </div>
 
     </div>
+
 
   </AuthenticatedLayout>
 </template>

@@ -26,6 +26,12 @@ Route::middleware('auth')->group(function () {
 });
 
 //wallets
-Route::get('/deposit', [WalletController::class, 'deposit_view'])->middleware('auth')->name('deposit.view');
+Route::middleware('auth')->group(function() {
+    Route::get('/deposit-view', [WalletController::class, 'deposit_view'])->name('deposit.view');
+    Route::post('/deposit', [WalletController::class, 'deposit'])->name('deposit');
+    Route::get('/withdraw-view', [WalletController::class, 'withdraw_view'])->name('withdraw.view');
+    Route::post('/withdraw', [WalletController::class, 'withdraw'])->name('withdraw');
+
+});
 
 require __DIR__.'/auth.php';
