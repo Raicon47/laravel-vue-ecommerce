@@ -15,7 +15,21 @@ import { Head, Link  } from '@inertiajs/vue3';
            <Link :href="route('create.newproduct')" class="btn btn-success btn-sm">create new</Link>
         </div>
 
-        <div class="py-5">
+        <div class="row my-5">
+            <div class="col-md-4 my-2" v-for="product in $page.props.auth.user.products" :key="product.id">
+            <div class="card" style="width: auto;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">{{ product.quantity }}</h6>
+                  <p class="card-text">{{ product.description }}</p>
+                  <a href="#" class="card-link btn btn-warning btn-sm">add to cart</a>
+                  <a href="#" class="card-link btn btn-danger btn-sm">delete</a>
+                </div>
+              </div>
+        </div>
+        </div>
+
+        <div class="mt-5 text-center">
             <div class="">
                 <div class="bg-white">
 

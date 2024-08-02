@@ -10,9 +10,6 @@ defineProps({
     status: {
         type: String,
     },
-    amount: {
-        type: String,
-    },
 });
 
 const form = useForm({

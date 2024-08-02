@@ -17,29 +17,30 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
+Route::get('/apuntosugar/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/apuntosugar/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/apuntosugar/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/apuntosugar/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 //wallets
 Route::middleware('auth')->group(function() {
-    Route::get('/deposit-view', [WalletController::class, 'deposit_view'])->name('deposit.view');
-    Route::post('/deposit', [WalletController::class, 'deposit'])->name('deposit');
-    Route::get('/withdraw-view', [WalletController::class, 'withdraw_view'])->name('withdraw.view');
-    Route::post('/withdraw', [WalletController::class, 'withdraw'])->name('withdraw');
+    Route::get('/apuntosugar/deposit-view', [WalletController::class, 'deposit_view'])->name('deposit.view');
+    Route::post('/apuntosugar/deposit', [WalletController::class, 'deposit'])->name('deposit');
+    Route::get('/apuntosugar/withdraw-view', [WalletController::class, 'withdraw_view'])->name('withdraw.view');
+    Route::post('/apuntosugar/withdraw', [WalletController::class, 'withdraw'])->name('withdraw');
 
 });
 
 //products
 Route::middleware('auth')->group(function() {
-    Route::get('/products', [ProductController::class, 'products'])->name('products');
-    Route::get('/create-new-product', [ProductController::class, 'create_product_view'])->name('create.newproduct');
+    Route::get('/apuntosugar/products', [ProductController::class, 'products'])->name('products');
+    Route::get('/apuntosugar/create-new-product', [ProductController::class, 'create_product_view'])->name('create.newproduct');
+    Route::post('/apuntosugar/create', [ProductController::class, 'create'])->name('create');
 });
 
 require __DIR__.'/auth.php';

@@ -19,7 +19,7 @@ class WalletController extends Controller
 
     public function deposit(Request $request): RedirectResponse
     {
-       $amount_validated = $request->validate([
+       $request->validate([
             'amount' => 'required|string|max:255',
         ]);
         $user = auth()->user();
@@ -38,7 +38,7 @@ class WalletController extends Controller
     public function withdraw(Request $request): RedirectResponse
     {
 
-       $amount_validated = $request->validate([
+       $request->validate([
             'amount' => 'required|string|max:255',
         ]);
         $user = auth()->user();

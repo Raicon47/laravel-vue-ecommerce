@@ -10,9 +10,6 @@ defineProps({
     status: {
         type: String,
     },
-    amount: {
-        type: String,
-    },
 });
 
 const form = useForm({
@@ -30,7 +27,7 @@ const submit = () => {
 
     <div class="container col-md-4 mx-auto">
         <h1>Withdraw</h1>
-        <p>Hello , {{ $page.props.auth.user.name }}. input deposit amount below</p>
+        <p>Hello , {{ $page.props.auth.user.name }}. input withdrawal amount below</p>
 
         <form @submit.prevent="submit">
             <div class="my-3">
