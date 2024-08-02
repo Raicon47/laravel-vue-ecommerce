@@ -18,9 +18,11 @@ class WalletController extends Controller
         ]);
     }
 
-    public function deposit()
+    public function deposit(Request $request)
     {
         $user = auth()->user;
+
+
     }
 
 }
