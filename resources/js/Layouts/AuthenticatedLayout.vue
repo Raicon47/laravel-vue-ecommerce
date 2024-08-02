@@ -22,6 +22,9 @@ const showingNavigationDropdown = ref(false);
     <Link class="nav-link text-dark" :href="route('profile.edit')" :active="route().current('profile.edit')">Profile</Link>
   </li>
   <li class="nav-item">
+    <Link class="nav-link text-dark" :href="route('products')" :active="route().current('profile.edit')">Products</Link>
+  </li>
+  <li class="nav-item">
     <Link class="btn btn-danger mt-1" :href="route('logout')" method="post" as="button">Logout</Link>
   </li>
 </ul>

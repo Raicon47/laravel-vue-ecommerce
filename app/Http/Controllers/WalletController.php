@@ -14,8 +14,7 @@ class WalletController extends Controller
 
     public function deposit_view()
     {
-        return Inertia::render('Wallet/WalletDeposit', [
-        ]);
+        return Inertia::render('Wallet/WalletDeposit');
     }
 
     public function deposit(Request $request): RedirectResponse
@@ -32,8 +31,7 @@ class WalletController extends Controller
 
     public function withdraw_view()
     {
-        return Inertia::render('Wallet/WalletWithdraw', [
-        ]);
+        return Inertia::render('Wallet/WalletWithdraw');
     }
 
 

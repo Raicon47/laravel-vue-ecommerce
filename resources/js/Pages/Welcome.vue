@@ -57,7 +57,7 @@ function handleImageError() {
             <div class="bg-warning p-2">
                get 20% discount from now till December
             </div>
-            
+
             <div class="container my-5">
                    <div class="row">
 
@@ -68,7 +68,7 @@ function handleImageError() {
                                 <p class="card-text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ipsum sed! Neque, consequuntur enim. Necessitatibus magni libero mollitia officia obcaecati?
                                 </p>
-                                <Link :href="route('dashboard')" class="btn btn-warning mx-2">
+                                <Link :href="route('products')" class="btn btn-warning mx-2">
                                        Add to cart
                                    </Link>
                             </div>

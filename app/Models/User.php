@@ -3,11 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Bavix\Wallet\Interfaces\Wallet;
+use Bavix\Wallet\Traits\HasWallet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Bavix\Wallet\Traits\HasWallet;
-use Bavix\Wallet\Interfaces\Wallet;
 
 class User extends Authenticatable implements Wallet
 {
@@ -34,7 +35,7 @@ class User extends Authenticatable implements Wallet
         'remember_token',
     ];
 
-    protected $with = ['wallet'];
+    protected $with = ['wallet', 'products'];
 
     /**
      * Get the attributes that should be cast.
@@ -48,4 +49,10 @@ class User extends Authenticatable implements Wallet
             'password' => 'hashed',
         ];
     }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
+
 }
