@@ -3,8 +3,8 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import SecondButton from '@/Components/SecondButton.vue';
 
 defineProps({
     status: {
@@ -31,12 +31,12 @@ const submit = () => {
 <Head title="Create new product" />
 
         <div class="mx-auto col-md-6">
-          <h2>Create new product</h2>
+          <h4 style="color: #8c52ff;">Create new product</h4>
 
           <form @submit.prevent="submit">
 
             <div class="my-3">
-                <InputLabel for="name" value="Product Name" />
+                <InputLabel for="name" class="small" value="Product Name" />
                 <TextInput
                     id="name"
                     type="text"
@@ -45,11 +45,11 @@ const submit = () => {
                     autofocus
                     autocomplete="name"
                 />
-                <InputError class="text-danger" :message="form.errors.name" />
+                <InputError class="text-danger small" :message="form.errors.name" />
             </div>
 
             <div class="my-3">
-                <InputLabel for="price" value="Product Price" />
+                <InputLabel for="price" class="small" value="Product Price" />
                 <TextInput
                     id="price"
                     type="text"
@@ -58,12 +58,12 @@ const submit = () => {
                     autofocus
                     autocomplete="price"
                 />
-                <InputError class="text-danger" :message="form.errors.price" />
+                <InputError class="text-danger small" :message="form.errors.price" />
             </div>
 
 
             <div class="my-3">
-                <InputLabel for="quantity" value="Product Quantity" />
+                <InputLabel for="quantity" class="small" value="Product Quantity" />
                 <TextInput
                     id="quantity"
                     type="number"
@@ -72,11 +72,11 @@ const submit = () => {
                     autofocus
                     autocomplete="quantity"
                 />
-                <InputError class="text-danger" :message="form.errors.quantity" />
+                <InputError class="text-danger small" :message="form.errors.quantity" />
             </div>
 
             <div class="my-3">
-                <InputLabel for="description" value="Product Description" />
+                <InputLabel for="description" class="small" value="Product Description" />
                 <TextInput
                     id="description"
                     type="text"
@@ -85,11 +85,11 @@ const submit = () => {
                     autofocus
                     autocomplete="description"
                 />
-                <InputError class="text-danger" :message="form.errors.description" />
+                <InputError class="text-danger small" :message="form.errors.description" />
             </div>
 
             <div class="my-3">
-                <InputLabel for="image" value="Product Image" />
+                <InputLabel for="image" class="small" value="Product Image" />
                 <TextInput
                     id="image"
                     type="file"
@@ -97,12 +97,12 @@ const submit = () => {
                     v-model="form.image"
                     autofocus
                 />
-                <InputError class="text-danger" :message="form.errors.image" />
+                <InputError class="text-danger small" :message="form.errors.image" />
             </div>
 
-            <PrimaryButton class="btn btn-success" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <SecondButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     create
-            </PrimaryButton>
+            </SecondButton>
 
           </form>
 

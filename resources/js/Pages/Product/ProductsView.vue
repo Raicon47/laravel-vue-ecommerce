@@ -11,8 +11,8 @@ import { Head, Link  } from '@inertiajs/vue3';
 <Head title="Products" />
 
         <div class="d-flex justify-content-between">
-           <span class="fw-bold">Products</span>
-           <Link :href="route('create.newproduct')" class="btn btn-success btn-sm">create new</Link>
+           <span class="fw-bold" style="color: #8c52ff;">Products</span>
+           <Link :href="route('create.newproduct')" class="btn shadow-sm btn-sm" style="background: #ede695;">create new</Link>
         </div>
 
         <div class="row my-5">

@@ -42,13 +42,13 @@ function handleImageError() {
       </ul>
       <form  class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="btn btn-danger mx-2">
+        <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="btn mx-1 text-light" style="background: #8c52ff;">
             Dashboard
         </Link>
-        <Link v-if="canLogin" :href="route('login')" class="btn btn-warning mx-1">
+        <Link v-if="canLogin" :href="route('login')" class="btn mx-1" style="background: #ede695;">
             Login
         </Link>
-        <Link  v-if="canRegister" :href="route('register')" class="btn btn-outline-danger mx-1">
+        <Link  v-if="canRegister" :href="route('register')" class="btn mx-1 text-light" style="background: #8c52ff;">
             Register
         </Link>
       </form>
@@ -56,7 +56,7 @@ function handleImageError() {
   </div>
 </nav>
 
-            <div class="alert" style="background: #8c52ff;">
+            <div class="alert text-light" style="background: #8c52ff;">
                get 20% discount from now till December
             </div>
 
