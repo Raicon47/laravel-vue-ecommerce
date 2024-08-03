@@ -37,6 +37,12 @@ class ProductController extends Controller
             'description' => $request->description,
         ]);
 
+
+            // Store the file in the public folder
+
+
+
+
         return Redirect::route('products');
 
 

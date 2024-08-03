@@ -17,6 +17,7 @@ const form = useForm({
     price: '',
     quantity: '',
     description: '',
+    image: '',
 })
 
 const submit = () => {
@@ -85,6 +86,18 @@ const submit = () => {
                     autocomplete="description"
                 />
                 <InputError class="text-danger" :message="form.errors.description" />
+            </div>
+
+            <div class="my-3">
+                <InputLabel for="image" value="Product Image" />
+                <TextInput
+                    id="image"
+                    type="file"
+                    class="form-control mt-1"
+                    v-model="form.image"
+                    autofocus
+                />
+                <InputError class="text-danger" :message="form.errors.image" />
             </div>
 
             <PrimaryButton class="btn btn-success" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">

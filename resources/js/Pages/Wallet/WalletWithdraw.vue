@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
+import SecondButton from '@/Components/SecondButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
 defineProps({
@@ -26,8 +26,8 @@ const submit = () => {
     <Head title="Deposit" />
 
     <div class="container col-md-4 mx-auto">
-        <h1>Withdraw</h1>
-        <p>Hello , {{ $page.props.auth.user.name }}. input withdrawal amount below</p>
+        <h4 style="color: #8c52ff;">Withdraw</h4>
+        <p class="fst-italic">Hello , {{ $page.props.auth.user.name }}. input withdrawal amount below</p>
 
         <form @submit.prevent="submit">
             <div class="my-3">
@@ -45,9 +45,9 @@ const submit = () => {
                 <InputError class="text-danger" :message="form.errors.amount" />
             </div>
 
-            <PrimaryButton class="btn btn-success" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <SecondButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     withdraw
-            </PrimaryButton>
+            </SecondButton>
 
         </form>
 

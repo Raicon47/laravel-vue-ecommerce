@@ -29,9 +29,11 @@ function handleImageError() {
 <template>
     <Head title="Welcome" />
 
-    <nav v-if="canLogin" class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav v-if="canLogin" class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="nav text-decoration-none text-danger fw-bold" href="#">Apunto Sugar</a>
+    <a class="nav text-decoration-none text-danger fw-bold" href="#">
+        <img src="/storage/img/logo/logo.png" height="50" alt="">
+    </a>
     <div class=" navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- <li class="nav-item">
@@ -54,7 +56,7 @@ function handleImageError() {
   </div>
 </nav>
 
-            <div class="bg-warning p-2">
+            <div class="alert" style="background: #8c52ff;">
                get 20% discount from now till December
             </div>
 
